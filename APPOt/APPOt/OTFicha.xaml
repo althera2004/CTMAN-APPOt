@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APPOt.OTFicha"
+             Title="Captura de imágenes">
+    <Grid Padding="10,20,10,10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" x:Name="RowRosmiman"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" x:Name="LabelCodigoOT" FontSize="30" TextColor="Black"></Label>
+        <Label Grid.Row="1" x:Name="LabelRosiman" FontSize="26" TextColor="Black"></Label>
+        <Label Grid.Row="2" x:Name="LabelDireccion" FontSize="24" TextColor="DarkGray"></Label>
+        <Label Grid.Row="3" Text="Elija el tipo de imagen a fotografiar con los siguientes botones" HorizontalTextAlignment="Center" FontSize="20"/>
+       
+        <Button
+            x:Name="BtnGaleria1"
+            Text="Take Photo"
+            BackgroundColor="#cdde00"
+            Grid.Row="4"
+            FontSize="26"
+            Clicked="BtnGallery1_Clicked"/>
+        <Button
+            x:Name="BtnGaleria2"
+            Text="Take Photo"
+            BackgroundColor="#cdde00"
+            Grid.Row="5"
+            FontSize="26"
+            Clicked="BtnGallery2_Clicked"/>
+        <Button
+            x:Name="BtnGaleria3"
+            Text="Take Photo"
+            BackgroundColor="#cdde00"
+            Grid.Row="6"
+            FontSize="26"
+            Clicked="BtnGallery3_Clicked"/>
+        <Button
+            x:Name="BtnFinalizar"
+            Text="Finalizar captura imágenes"
+            BackgroundColor="Lime"
+            Grid.Row="8"
+            Clicked="TakePhoto_Clicked"/>
+    </Grid>
+</ContentPage>

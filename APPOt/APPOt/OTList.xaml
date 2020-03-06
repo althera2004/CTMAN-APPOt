@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:APPOt"
+             x:Class="APPOt.OTList" Title="Listado de OTs">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Text="Selecionar OT para capturar imágenes" HorizontalOptions="CenterAndExpand" FontSize="24" FontFamily="BoldFont" TextColor="Black"></Label>
+        <ListView x:Name="MyListView"
+                  CachingStrategy="RecycleElement"               
+                  IsVisible="True"
+                  IsPullToRefreshEnabled="True"
+                  IsRefreshing = "true"
+                  HasUnevenRows="True"
+                  RowHeight="80"
+                  Grid.Row="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"></RowDefinition>
+                                <RowDefinition Height="auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                                <ColumnDefinition Width="50*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding C}" FontFamily="BoldFont" FontSize="26"></Label>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding R}" FontFamily="NormalFont" FontSize="20" YAlign="Center" XAlign="End"></Label>
+                            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding D}" FontFamily="LightFont" FontSize="20"></Label>
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

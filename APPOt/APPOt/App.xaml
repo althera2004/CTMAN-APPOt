@@ -3,6 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="APPOt.App">
     <Application.Resources>
+        <ResourceDictionary>
+                <OnPlatform x:TypeArguments="x:String" x:Key="BoldFont">
+                    <On Platform="Android" Value="nexa-bold-webfont.ttf#Nexa Bold" />
+                </OnPlatform>
+                <OnPlatform x:TypeArguments="x:String" x:Key="NormalFont">
+                    <On Platform="Android" Value="NEXA REGULAR#NexaRegular" />
+                </OnPlatform>
 
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="#cdde00" />
+                <Setter Property="BarTextColor" Value="Black" />
+            </Style>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

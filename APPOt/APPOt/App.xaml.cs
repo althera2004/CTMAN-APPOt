@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -10,8 +9,17 @@ namespace APPOt
         public App()
         {
             InitializeComponent();
+            Current.Resources = new ResourceDictionary();
+            Current.Resources.Add("ConstraulaColor", Color.FromRgb(205, 202, 0));
+            var navigationStyle = new Style(typeof(NavigationPage));
+            var barTextColorSetter = new Setter { Property = NavigationPage.BarTextColorProperty, Value = Color.Black };
+            var barBackgroundColorSetter = new Setter { Property = NavigationPage.BarBackgroundColorProperty, Value = Color.FromRgb(205, 202, 0) };
 
-            MainPage = new MainPage();
+            navigationStyle.Setters.Add(barTextColorSetter);
+            navigationStyle.Setters.Add(barBackgroundColorSetter);
+
+            Current.Resources.Add(navigationStyle);
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
